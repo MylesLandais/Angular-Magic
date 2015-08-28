@@ -1,0 +1,9 @@
+<div class="search">
+	<h1>Magic Card Directory</h1>
+	<input ng-model="query">
+</div>
+<p>{{ search.query }}
+
+<ul class="cardList">
+		<li ng-repeat="item in cards"><a href="#/details/{{item.name}}">{{item.name }},{{item.multiverseid}}</a> </li>
+</ul>

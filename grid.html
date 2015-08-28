@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang ="en" ng-app="myApp">
+<head>
+	<title>MagicScript</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<div class="main" ng-controller = "MyController">
+
+  <div class="search">
+    <h1>MTG Card Directory</h1>
+    <label>search: </label>
+    <input ng-model="query" placeholder="Search" autofocus>
+
+  </div>
+  <div ng-repeat="item in cards track by $index | filter: query" ng-if="$index%3==0">
+  <div class="col-md-4">{{cards[$index].name}}</br><img src="http://mtgimage.com/multiverseid/{{cards[$index].multiverseid}}.jpg" style="max-width:240px;"></img></div>
+  <div class="col-md-4">{{cards[$index+1].name}}</br><img src="http://mtgimage.com/multiverseid/{{cards[$index+1].multiverseid}}.jpg" style="max-width:240px;"></img></div>
+  <div style="col-md-4">{{cards[$index+2].name}}</br><img src="http://mtgimage.com/multiverseid/{{cards[$index+2].multiverseid}}.jpg" style="max-width:240px;"></img></div>
+</div>
+
+</div>
+</body>
+<footer>
+	<!--Load le scripts -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+</footer>
+</html>
